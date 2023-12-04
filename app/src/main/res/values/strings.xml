@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndersenRetrofit</string>
+    <string name="get_currency">Get Currency</string>
+    <string name="input_the_name_of_currency">Input the name of currency</string>
 </resources>
