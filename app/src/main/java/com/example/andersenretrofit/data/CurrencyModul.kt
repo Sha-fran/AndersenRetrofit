@@ -1,5 +1,7 @@
 package com.example.andersenretrofit.data
 
+import com.example.andersenretrofit.domain.GetCurrencyByNameUseCase
+import com.example.andersenretrofit.domain.GetCurrencyRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,13 +11,17 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object CurrencyModul {
+class CurrencyModul {
 
+    @Singleton
     @Provides
     fun getApiClient() = ApiClient()
 
+    @Singleton
     @Provides
-    fun getRepository(apiClient: ApiClient) = GetCurrencyRepositoryImpl(apiClient)
+    fun getRepository(apiClient: ApiClient): GetCurrencyRepository = GetCurrencyRepositoryImpl(apiClient)
 
-
+    @Singleton
+    @Provides
+    fun getCurrencyByNameUseCase(getCurrency:GetCurrencyRepository) :GetCurrencyByNameUseCase = GetCurrencyByNameUseCase(getCurrency)
 }

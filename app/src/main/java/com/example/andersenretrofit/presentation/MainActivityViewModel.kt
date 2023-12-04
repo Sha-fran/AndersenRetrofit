@@ -12,14 +12,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainActivityViewModel @Inject constructor(val repositoryImpl: GetCurrencyRepositoryImpl):ViewModel() {
-//    private val getCurrencyByName = GetCurrencyByNameUseCase(repositoryImpl)
+class MainActivityViewModel @Inject constructor(
+    private val getCurrencyByNameUseCase: GetCurrencyByNameUseCase
+):ViewModel() {
     private val _uiState = MutableLiveData<UiState>(UiState.Empty)
     val uiState: LiveData<UiState> = _uiState
 
     fun getCurrencyByName(name:String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = repositoryImpl.getCurrencyByName(name)
+            val response = getCurrencyByNameUseCase.getCurrencyByName(name)
             val currency = response.body()?.data
             _uiState.postValue(UiState.Result("${currency?.id}\n${currency?.rateUsd}"))
         }

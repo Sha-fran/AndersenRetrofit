@@ -1,7 +1,7 @@
 package com.example.andersenretrofit.domain
 
-class GetCurrencyByNameUseCase(private val getCurrency: GetCurrencyRepository) {
-    suspend fun getCurrencyByName(name: String) {
-        getCurrency.getCurrencyByName(name)
-    }
+import javax.inject.Inject
+
+class GetCurrencyByNameUseCase @Inject constructor(private val getCurrency: GetCurrencyRepository) {
+    suspend fun getCurrencyByName(name: String) = getCurrency.getCurrencyByName(name)
 }
