@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             when (uiState) {
                 is MainActivityViewModel.UiState.Empty -> binding!!.textView.text = ""
                 is MainActivityViewModel.UiState.Result -> binding!!.textView.text = uiState.title
-                else -> {}
             }
         }
     }
