@@ -1,0 +1,1 @@
+C:\Users\levit\AndroidStudioProjects\AndersenRetrofit\buildSrc\build\classes\kotlin\main\ProjectConfig.class
