@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndersenRetrofit"
 include ':app'
+include ':core:ua'
+include ':core:util'
