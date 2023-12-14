@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainActivityViewModel @Inject constructor(
+open class MainActivityViewModel @Inject constructor(
     private val getCurrencyByNameUseCase: GetCurrencyByNameUseCase
 ):ViewModel() {
     private val _uiState = MutableLiveData<UiState>(UiState.Empty)

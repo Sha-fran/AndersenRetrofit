@@ -1,4 +1,6 @@
 [versions]
+activity-ktx = "1.8.2"
+androidx-lifecycle-viewmodel-ktx = "2.4.0"
 core-ktx = "1.12.0"
 appcompat = "1.6.1"
 material = "1.10.0"
@@ -17,7 +19,9 @@ agp = "8.1.4"
 kotlin = "1.9.10"
 
 [libraries]
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity-ktx" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-lifecycle-viewmodel-ktx-v240 = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle-viewmodel-ktx" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }

@@ -2,11 +2,9 @@ package com.example.andersenretrofit.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import com.example.andersenretrofit.R
 import com.example.andersenretrofit.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.activity.viewModels
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -17,8 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
-        val viewModel: MainActivityViewModel =
-            ViewModelProvider(this).get(MainActivityViewModel::class.java)
+        val viewModel: MainActivityViewModel by viewModels()
 
         binding!!.getCurrencyButton.setOnClickListener {
             val name = binding!!.inputCurrency.editText?.text.toString()
